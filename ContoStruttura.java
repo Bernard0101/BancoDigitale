@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-class ContoStruttura{
+public class ContoStruttura{
     private int codiciFiscale;
     private String nome;
     private String segna;

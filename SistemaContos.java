@@ -7,7 +7,7 @@ import java.util.Scanner;
 import BancoDigitale.ContoStruttura;
 
 
-class SistemaContos{
+public class SistemaContos{
     static Scanner scan = new Scanner(System.in);
     private ContoStruttura conto;
     private List <ContoStruttura> contos = new ArrayList <ContoStruttura>();

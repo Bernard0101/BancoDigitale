@@ -10,8 +10,11 @@ public class GUI_Registrare extends JFrame{
     private JTextField F_codici;
     private JPasswordField P_chiave;
     private JPanel mainPanel;
+    private SistemaContos sistema;
 
-    GUI_Registrare(){
+    GUI_Registrare(SistemaContos sistema){
+        this.sistema = sistema;
+
         B_procede.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -23,11 +26,12 @@ public class GUI_Registrare extends JFrame{
                 ContoStruttura novoConto = sistema.cadastro(codici, nome, chiave, null);
 
                 JOptionPane.showMessageDialog(null, "utente " + novoConto.getNome()+ " creato benvenuto");
+                GUI_Design.esecutore(sistema);
             }
         });
     }
-    public static void main(String args[]){
-        GUI_Registrare registrare = new GUI_Registrare();
+    public static void esecutore(SistemaContos sistema){
+        GUI_Registrare registrare = new GUI_Registrare(sistema);
         registrare.setContentPane(registrare.mainPanel);
         registrare.setTitle("regitra Frame");
         registrare.setSize(400, 300);
